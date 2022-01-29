@@ -1,0 +1,61 @@
+{
+  "name": "clue-report",
+  "version": "1.0.1",
+  "description": "第三方线索上报",
+  "main": "dist/clue-report.min.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack",
+    "prepare": "husky install",
+    "changelog:major": "standard-version --release-as major",
+    "changelog:minor": "standard-version --release-as minor",
+    "changelog:patch": "standard-version --release-as patch",
+    "eslint": "eslint --fix core/**",
+    "deploy": "node ./scripts/deploy.js",
+    "deploy:dev": "cross-env NODE_ENV=dev yarn deploy",
+    "deploy:dep": "cross-env NODE_ENV=dep yarn deploy",
+    "deploy:prod": "cross-env NODE_ENV=prod yarn deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "colors": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "fs-extra": "^10.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.2",
+    "prettier": "2.5.1",
+    "shelljs": "^0.8.4",
+    "standard-version": "^9.3.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "@babel/runtime-corejs3": "^7.16.3",
+    "babel-loader": "^8.2.3",
+    "commander": "^8.3.0",
+    "cookie": "^0.4.1"
+  },
+  "lint-staged": {
+    "**/*.{js}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

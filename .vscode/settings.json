@@ -1,0 +1,38 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true, // 保存自动格式化
+  // ===========================================
+  // ================ Editor ===================
+  // ===========================================
+  // ===========================================
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // ================ Eslint ===================
+  // ===========================================
+  // "eslint.autoFixOnSave": true, 这个设置被废弃了，使用下面的editor.codeActionsOnSave的配置
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript", "reacttypescript", "reactjavascript", "vue"]
+  // ===========================================
+}

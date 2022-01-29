@@ -1,0 +1,14 @@
+# /node_modules/* 和 /bower_components/* 是默认忽略的
+.history/
+.idea/
+.vscode/
+build/
+dist/
+test/
+*.json
+*.scss
+*.md
+*.png
+*.gif
+*.jpg
+env.js

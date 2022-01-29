@@ -1,0 +1,31 @@
+stages:
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+# 变量
+variables:
+  ORIGIN_DIR: "xxxxx"
+  TARGET_DIR: "xxxx"
+
+deploy:
+  # 执行安装依赖的任务
+  stage: deploy
+  # 这个对应的是刚刚注册的runner的名字，这个非常重要，决定了你是否能启用某个runner机子
+  tags:
+    - ts-tag
+  only:
+    # 这个是限制的分支，这里表示只有在develop推送时，才会触发cicd
+    refs:
+      - develop
+    # 这里代表commit的备注中，存在cicd这几个关键词时，才会触发
+    variables:
+      - $CI_COMMIT_TITLE =~ /cicd/
+  # 脚本
+  script:
+    - cd $ORIGIN_DIR
+    - yarn deploy:dev
+
+

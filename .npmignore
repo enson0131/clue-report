@@ -1,0 +1,11 @@
+examples/
+node_modules/
+src/
+core/
+coverage/
+.gitignore
+.npmignore
+.husky/
+.vscode/
+scripts/
+test/
